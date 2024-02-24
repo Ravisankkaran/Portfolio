@@ -504,95 +504,116 @@ img {
 
 
 /* projects  */
+/* Default styles for project container */
 .project-container {
-  /* overflow: initial; */
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Two columns with equal width */
+  grid-template-columns: 1fr; /* Single column by default */
   gap: 20px;
 }
 
+/* Styles for project content */
 .project-content {
   padding: 0 1.5rem;
 }
 
+/* Styles for project title */
 .project-title {
   font-size: var(--h3-font-size);
   margin-bottom: var(--margin-bottom-0-5);
   margin-top: 20px;
 }
 
+/* Styles for project description */
 .project-description {
   margin-bottom: var(--margin-bottom-0-75);
 }
 
+/* Styles for project span */
 .project span {
   display: grid;
-  grid-template-columns: 1fr 1fr; /* Two columns with equal width */
+  grid-template-columns: 1fr; /* Single column by default */
   gap: 20px;
-    color: #6e57e0;
-  }
+  color: #6e57e0;
+}
+
+/* Styles for columns within project */
 .project .col {
+  padding: 0 1em 1em 1em;
+  text-align: center;
+}
 
-    padding: 0 1em 1em 1em;
-    text-align: center;
-   
-    
+/* Styles for service cards within project */
+.project .service-card {
+  display: grid;
+  grid-template-columns: 1fr; /* Single column by default */
+  gap: 20px;
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 2em 1.5em;
+  border-radius: 5px;
+  box-shadow: 0 0 35px rgba(0, 0, 0, 0.12);
+  cursor: pointer;
+  transition: 0.5s;
+  position: relative;
+  z-index: 2;
+  overflow: hidden;
+  background: #fff;
+}
 
-  }
+/* Styles for gradient overlay on service cards */
+.project .service-card::after {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(#6e57e0, #6e57e0);
+  position: absolute;
+  left: 0%;
+  top: -98%;
+  z-index: -2;
+  transition: all 0.4s cubic-bezier(0.77, -0.04, 0, 0.99);
+}
 
-  .project .service-card {
-    display: grid;
-    grid-template-columns: 1fr 1fr; /* Two columns with equal width */
-    gap: 200px;
-    text-align: center;
-    margin-bottom: 20px;
-    width: 100%;
-    height: 100%;
-    padding: 2em 1.5em;
-    border-radius: 5px;
-    box-shadow: 0 0 35px rgba(0, 0, 0, 0.12);
-    cursor: pointer;
-    transition: 0.5s;
-    position: relative;
-    z-index: 2;
-    overflow: hidden;
-    background: #fff;
-  }
-
-  .project .service-card::after {
-    content: "";
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(#6e57e0, #6e57e0);
-    position: absolute;
-    left: 0%;
-    top: -98%;
-    z-index: -2;
-    transition: all 0.4s cubic-bezier(0.77, -0.04, 0, 0.99);
-  }
-  
+/* Adjust gradient overlay position on hover */
 .project .service-card:hover:after {
-    top: 0%;
+  top: 0%;
+}
+
+/* Styles for icon wrapper within service cards */
+.service-card .icon-wrapper {
+  background-color: #ffffff;
+  color: #6e57e0;
+}
+
+/* Adjust icon color on hover */
+.project .service-card:hover .icon-wrapper {
+  color: #6e57e0;
+}
+
+/* Adjust heading color and alignment on hover */
+.project .service-card:hover h3 {
+  color: #ffffff;
+  align-items: center;
+  margin-top: 20%;
+}
+
+/* Adjust paragraph text color on hover */
+.project .service-card:hover p {
+  color: #f0f0f0;
+}
+
+/* Media query for mobile devices */
+@media (min-width: 768px) {
+  .project-container {
+    grid-template-columns: 1fr 1fr; /* Two columns for tablets and larger screens */
   }
-  
-  .service-card .icon-wrapper {
-    background-color: #ffffff;
-    color:#6e57e0;
+
+  .project span,
+  .project .col,
+  .project .service-card {
+    grid-template-columns: 1fr 1fr; /* Two columns for tablets and larger screens */
   }
-  
-  .project .service-card:hover .icon-wrapper {
-    color: #6e57e0;
-  }
-  
-  .project .service-card:hover h3 {
-    color: #ffffff;
-    align-items: center;
-    margin-top: 20%;
-  }
-  
-  .project .service-card:hover p {
-    color: #f0f0f0;
-  }
+}
+
 /* projects  */
 
 .swiper-button-prev::after,
